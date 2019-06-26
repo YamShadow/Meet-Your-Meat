@@ -146,12 +146,17 @@ export default {
       let eau = 0;
       if (etat == "actuel") {
         eau =
-          this.eauCarne * this.nbRepasCarne +
-          this.eauVegetarien * (this.nbEat - this.nbRepasCarne);
+          (this.eauCarne * this.nbRepasCarne +
+            this.eauVegetarien * (this.nbEat - this.nbRepasCarne)) *
+          this.nbUsers;
       } else if (etat == "2vege") {
-        eau = this.eauCarne * (this.nbEat - 2) + this.eauVegetarien * 2;
+        eau =
+          (this.eauCarne * (this.nbEat - 2) + this.eauVegetarien * 2) *
+          this.nbUsers;
       } else {
-        eau = this.eauCarne * 2 + this.eauVegetarien * (this.nbEat - 2);
+        eau =
+          (this.eauCarne * 2 + this.eauVegetarien * (this.nbEat - 2)) *
+          this.nbUsers;
       }
 
       return eau;
@@ -159,11 +164,14 @@ export default {
     calculeProteine(etat) {
       let proteine = 0;
       if (etat == "actuel") {
-        proteine = this.partProt * this.nbRepasCarne - this.partProt * 2;
+        proteine =
+          (this.partProt * this.nbRepasCarne - this.partProt * 2) *
+          this.nbUsers;
       } else if (etat == "2vege") {
-        proteine = this.partProt * (this.nbEat - 2) - this.partProt * 2;
+        proteine =
+          (this.partProt * (this.nbEat - 2) - this.partProt * 2) * this.nbUsers;
       } else {
-        proteine = this.partProt * 2 - this.partProt * 2;
+        proteine = (this.partProt * 2 - this.partProt * 2) * this.nbUsers;
       }
 
       return proteine;
