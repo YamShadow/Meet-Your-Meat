@@ -1,8 +1,26 @@
 <template>
-  <div class="result flex justify-center mx-10" id="result">
-    <Regime msg="Carnivore"></Regime>
-    <Regime msg="Norme"></Regime>
-    <Regime msg="2 végé"></Regime>
+  <div class="result flex justify-center px-20 py-24" id="result">
+    <Regime
+      title="prix moyen de vos <br> dépenses actuelles"
+      :somme="data.repasActuel"
+      :eau="data.eauActuel"
+      :proteine="data.proteineActuel"
+      orientation="left"
+    ></Regime>
+    <Regime
+      title="prix moyen selon les <br> recommandations"
+      :somme="data.repasNorme"
+      :eau="data.eauNorme"
+      :proteine="data.proteineNorme"
+      orientation="middle"
+    ></Regime>
+    <Regime
+      title="prix moyen de deux <br> repas veggie"
+      :somme="data.repas2Vege"
+      :eau="data.eau2Vege"
+      :proteine="data.proteine2Vege"
+      orientation="right"
+    ></Regime>
 
     <!-- <p>Somme repas carnivore</p>
     <p>{{ data.repasActuel.toFixed(2) }}</p>

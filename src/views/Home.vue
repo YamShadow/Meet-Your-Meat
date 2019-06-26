@@ -60,12 +60,21 @@ export default {
       nbRepasCarne: 0,
       repasCarneAnnuel: 4646.15,
       repasVegetarienAnnuel: 3469.37,
+      eauCarne: 10000,
+      eauVegetarien: 1000,
       partChildren: 0.6,
+      partProt: 150,
       dataResult: {
         display: false,
         repasActuel: 0,
+        eauActuel: 0,
+        proteineActuel: 0,
         repasNorme: 0,
-        repas2Vege: 0
+        eauNorme: 0,
+        proteineNorme: 0,
+        repas2Vege: 0,
+        eau2Vege: 0,
+        proteine2Vege: 0
       }
     };
   },
@@ -82,8 +91,14 @@ export default {
       e.preventDefault();
       this.dataResult.display = true;
       this.dataResult.repasActuel = this.calculeSommeActuelle();
+      this.dataResult.eauActuel = this.calculeEau("actuel");
+      this.dataResult.proteineActuel = this.calculeProteine("actuel");
       this.dataResult.repas2Vege = this.calculeSomme2Vege();
+      this.dataResult.eau2Vege = this.calculeEau("2vege");
+      this.dataResult.proteine2Vege = this.calculeProteine("2vege");
       this.dataResult.repasNorme = this.calculeSommeNorme();
+      this.dataResult.eauNorme = this.calculeEau("norme");
+      this.dataResult.proteineNorme = this.calculeProteine("norme");
       this.scroll();
     },
     prixJours(somme) {
@@ -127,8 +142,33 @@ export default {
 
       return repas;
     },
+    calculeEau(etat) {
+      let eau = 0;
+      if (etat == "actuel") {
+        eau =
+          this.eauCarne * this.nbRepasCarne +
+          this.eauVegetarien * (this.nbEat - this.nbRepasCarne);
+      } else if (etat == "2vege") {
+        eau = this.eauCarne * (this.nbEat - 2) + this.eauVegetarien * 2;
+      } else {
+        eau = this.eauCarne * 2 + this.eauVegetarien * (this.nbEat - 2);
+      }
+
+      return eau;
+    },
+    calculeProteine(etat) {
+      let proteine = 0;
+      if (etat == "actuel") {
+        proteine = this.partProt * this.nbRepasCarne - this.partProt * 2;
+      } else if (etat == "2vege") {
+        proteine = this.partProt * (this.nbEat - 2) - this.partProt * 2;
+      } else {
+        proteine = this.partProt * 2 - this.partProt * 2;
+      }
+
+      return proteine;
+    },
     scroll() {
-      console.log(document.getElementById("app").scrollHeight);
       window.scrollTo({
         behavior: "smooth",
         left: 0,
