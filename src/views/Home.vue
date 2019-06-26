@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div v-if="dataResult.display">
+    <div v-if="dataResult.display" class="relative">
       <Result :data="dataResult"></Result>
     </div>
   </div>

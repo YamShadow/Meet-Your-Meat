@@ -22,6 +22,13 @@
       orientation="right"
     ></Regime>
 
+    <div class="button bot">
+      <i class="fab fa-facebook-messenger"></i>
+    </div>
+    <div class="button share">
+      <i class="fas fa-share-alt"></i>
+    </div>
+
     <!-- <p>Somme repas carnivore</p>
     <p>{{ data.repasActuel.toFixed(2) }}</p>
     <p>Somme repas 2 legume</p>
@@ -94,5 +101,30 @@ li {
 }
 a {
   color: #42b983;
+}
+.button {
+  height: 86px;
+  width: 86px;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.bot {
+  position: absolute;
+  right: 40px;
+  bottom: 150px;
+}
+.share {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+
+i {
+  font-size: 3rem;
+  position: relative;
+  left: 20px;
+  top: 20px;
+  color: #211987;
 }
 </style>
