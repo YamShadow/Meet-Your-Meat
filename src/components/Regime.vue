@@ -108,18 +108,34 @@ h2 {
   top: -25px;
 }
 
-.middle .info {
-  height: 750px;
-  position: relative;
-  top: -25px;
-  border-top: 10px solid #ffdd02;
-  -webkit-box-shadow: 0px 0px 43px -10px rgba(0, 0, 0, 0.74);
-  -moz-box-shadow: 0px 0px 43px -10px rgba(0, 0, 0, 0.74);
-  box-shadow: 0px 0px 43px -10px rgba(0, 0, 0, 0.74);
+@media only screen and (min-width: 731px) {
+  .middle .info {
+    height: 750px;
+    position: relative;
+    top: -25px;
+    border-top: 10px solid #ffdd02;
+    -webkit-box-shadow: 0px 0px 43px -10px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: 0px 0px 43px -10px rgba(0, 0, 0, 0.74);
+    box-shadow: 0px 0px 43px -10px rgba(0, 0, 0, 0.74);
+  }
 }
-
 .right {
   position: relative;
   left: -50px;
+}
+
+@media only screen and (max-width: 731px) {
+  .left,
+  .right {
+    left: 0;
+  }
+
+  .middle h1 {
+    top: 0;
+  }
+
+  .info {
+    max-width: 100%;
+  }
 }
 </style>

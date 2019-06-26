@@ -5,7 +5,7 @@
     </div>
     <div>
       <ul class="flex text-3xl">
-        <li class="font-bold">
+        <li class="mobile font-bold">
           <a href="#">
             <p>Eco'nomise</p>
             <div class="line"></div>
@@ -38,5 +38,15 @@ img {
   background: #211987;
   width: 100%;
   height: 11px;
+}
+
+@media only screen and (max-width: 731px) {
+  .mobile {
+    display: none;
+  }
+
+  a {
+    font-size: 18px;
+  }
 }
 </style>

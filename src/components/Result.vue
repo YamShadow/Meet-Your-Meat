@@ -127,4 +127,15 @@ i {
   top: 20px;
   color: #211987;
 }
+
+@media only screen and (max-width: 731px) {
+  .result {
+    flex-direction: column;
+  }
+
+  .py-24 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 </style>

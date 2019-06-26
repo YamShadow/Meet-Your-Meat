@@ -27,8 +27,7 @@
             >
               <option>0</option>
               <option v-for="n in 14" :key="n+'repas'">{{ n }}</option>
-            </select> fois de la viande ou du poisson
-            <br>dans la semaine.
+            </select> fois de la viande ou du poisson dans la semaine.
           </p>
           <button>Eco'nomise</button>
         </form>
@@ -218,6 +217,7 @@ p {
   line-height: 54px;
   letter-spacing: 0.894844px;
   margin-bottom: 3rem;
+  max-width: 900px;
 }
 
 form {
@@ -261,5 +261,30 @@ button {
   text-align: center;
   letter-spacing: 0.894844px;
   text-transform: capitalize;
+}
+
+@media only screen and (max-width: 731px) {
+  .py-10 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .mt-32 {
+    margin-top: 4rem;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    font-size: 20px;
+  }
+
+  .home {
+    padding: 2rem 2rem;
+    background-size: contain;
+  }
 }
 </style>

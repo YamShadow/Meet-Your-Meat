@@ -30,4 +30,15 @@ a {
   line-height: 23px;
   letter-spacing: 0.894844px;
 }
+
+@media only screen and (max-width: 731px) {
+  .footer {
+    flex-direction: column;
+    margin-left: 30px;
+  }
+
+  a {
+    margin-bottom: 10px;
+  }
+}
 </style>
