@@ -28,9 +28,17 @@ export default {
   methods: {
     stringSomme() {
       if (this.orientation == "left") {
-        return "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>10 000€</span><br>à l’année";
+        return (
+          "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>" +
+          Math.round(this.somme * 52) +
+          " €</span><br>à l’année"
+        );
       } else {
-        return "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>1</span> semaine à la mer <br> par an";
+        return (
+          "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>1</span> semaine à la mer <br> par an (soit " +
+          Math.round(this.somme * 52) +
+          " €)"
+        );
       }
     },
     stringEau() {
