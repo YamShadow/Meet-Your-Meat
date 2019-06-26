@@ -38,6 +38,8 @@
     <div v-if="dataResult.display" class="relative">
       <Result :data="dataResult"></Result>
     </div>
+
+    <Footer></Footer>
   </div>
 </template>
 
@@ -45,12 +47,14 @@
 // @ is an alias to /src
 import Menu from "@/components/Menu.vue";
 import Result from "@/components/Result.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "home",
   components: {
     Menu,
-    Result
+    Result,
+    Footer
   },
   data() {
     return {
