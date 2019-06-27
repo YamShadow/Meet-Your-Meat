@@ -1,7 +1,7 @@
 <template>
   <nav class="flex justify-between">
     <div>
-      <img src="https://fontmeme.com/images/Greenpeace-logo.png" alt>
+      <img src="../assets/logo_hor.png" alt>
     </div>
     <div>
       <ul class="flex text-3xl">
@@ -43,6 +43,10 @@ img {
 @media only screen and (max-width: 731px) {
   .mobile {
     display: none;
+  }
+
+  img {
+    max-width: 150px;
   }
 
   a {

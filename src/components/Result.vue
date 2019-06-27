@@ -28,44 +28,6 @@
     <div class="button share">
       <i class="fas fa-share-alt"></i>
     </div>
-
-    <!-- <p>Somme repas carnivore</p>
-    <p>{{ data.repasActuel.toFixed(2) }}</p>
-    <p>Somme repas 2 legume</p>
-    <p>{{ data.repas2Vege.toFixed(2) }}</p>
-    <p>Somme repas norme</p>
-    <p>{{ data.repasNorme.toFixed(2) }}</p>
-    <div>
-      <h2>Actuel / Norme</h2>
-      <div>
-        <p>Economie 1 semaine</p>
-        <p>{{ (data.repasActuel - data.repasNorme).toFixed(2) }}</p>
-      </div>
-      <div>
-        <p>Economie 1 mois</p>
-        <p>{{ ((data.repasActuel - data.repasNorme) * 4.33).toFixed(2) }}</p>
-      </div>
-      <div>
-        <p>Economie 1 ans</p>
-        <p>{{ ((data.repasActuel - data.repasNorme) * 52).toFixed(2) }}</p>
-      </div>
-    </div>
-
-    <div>
-      <h2>Actuel / 2 végé</h2>
-      <div>
-        <p>Economie 1 semaine</p>
-        <p>{{ (data.repasActuel - data.repas2Vege).toFixed(2) }}</p>
-      </div>
-      <div>
-        <p>Economie 1 mois</p>
-        <p>{{ ((data.repasActuel - data.repas2Vege) * 4.33 ).toFixed(2)}}</p>
-      </div>
-      <div>
-        <p>Economie 1 ans</p>
-        <p>{{ ((data.repasActuel - data.repas2Vege) * 52).toFixed(2) }}</p>
-      </div>
-    </div>-->
   </div>
 </template>
 
@@ -136,6 +98,11 @@ i {
   .py-24 {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .px-20 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 </style>

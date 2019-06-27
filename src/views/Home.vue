@@ -15,7 +15,7 @@
             dont
             <select v-model.number="nbChildren" name="nbChildren" id="nbChildren">
               <option>0</option>
-              <option v-for="n in nbUsers" :key="n+'children'">{{ n }}</option>
+              <option v-for="n in (nbUsers-1)" :key="n+'children'">{{ n }}</option>
             </select> enfant.
           </p>
           <p>
@@ -57,7 +57,7 @@ export default {
   },
   data() {
     return {
-      nbUsers: 0,
+      nbUsers: 1,
       nbEat: 14,
       nbChildren: 0,
       nbRepasCarne: 0,
@@ -66,7 +66,8 @@ export default {
       eauCarne: 10000,
       eauVegetarien: 1000,
       partChildren: 0.6,
-      partProt: 150,
+      partProt: 125,
+      enableScroll: false,
       dataResult: {
         display: false,
         repasActuel: 0,
@@ -81,13 +82,15 @@ export default {
       }
     };
   },
-  updated: () => {
-    scroll();
-    window.scrollTo({
-      behavior: "smooth",
-      left: 0,
-      top: document.getElementById("app").scrollHeight
-    });
+  updated: function() {
+    if (this.enableScroll) {
+      this.enableScroll = false;
+      window.scrollTo({
+        behavior: "smooth",
+        left: 0,
+        top: document.getElementById("app").scrollHeight - 80
+      });
+    }
   },
   methods: {
     send(e) {
@@ -196,6 +199,7 @@ export default {
   background-image: url("../assets/tas-billet.png");
   background-repeat: no-repeat;
   background-position: 100% 100%;
+  background-size: 60%;
 }
 
 .full {

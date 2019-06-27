@@ -130,12 +130,40 @@ h2 {
     left: 0;
   }
 
+  .middle {
+    top: -740px;
+    position: relative;
+  }
+
   .middle h1 {
     top: 0;
   }
 
   .info {
     max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .py-16 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .pl-12 {
+    padding-left: 1rem;
+  }
+
+  .pb-16 {
+    padding-bottom: 3rem;
+  }
+
+  .middle .info {
+    border-top: 10px solid #ffdd02;
+  }
+
+  .left {
+    position: relative;
+    top: 740px;
   }
 }
 </style>
