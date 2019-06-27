@@ -23,6 +23,7 @@ export default {
     somme: String,
     eau: String,
     proteine: String,
+    economie: String,
     orientation: String
   },
   methods: {
@@ -34,11 +35,52 @@ export default {
           " €</span><br>à l’année"
         );
       } else {
-        return (
-          "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>1</span> semaine à la mer <br> par an (soit " +
-          Math.round(this.somme * 52) +
-          " €)"
-        );
+        let economie = this.economie * 52;
+
+        if (economie < 500) {
+          if (economie < 0) economie = 0;
+          return (
+            "soit <span style='font-weight: 900;font-size: 40px;line-height: 61px;'>" +
+            Math.round(economie) +
+            "</span> € d'économisés"
+          );
+        } else if (economie < 1000) {
+          return (
+            "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>1</span> semaine à la mer <br> par an (soit " +
+            Math.round(economie) +
+            " €)"
+          );
+        } else if (economie < 1500) {
+          return (
+            "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>1</span> semaine à la montagne <br> par an (soit " +
+            Math.round(economie) +
+            " €)"
+          );
+        } else if (economie < 2000) {
+          return (
+            "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>1</span> semaine à Barcelone <br> par an (soit " +
+            Math.round(economie) +
+            " €)"
+          );
+        } else if (economie < 2500) {
+          return (
+            "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>2</span> semaine en Italie <br> par an (soit " +
+            Math.round(economie) +
+            " €)"
+          );
+        } else if (economie < 3000) {
+          return (
+            "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>2</span> semaine en Lisbonne <br> par an (soit " +
+            Math.round(economie) +
+            " €)"
+          );
+        } else {
+          return (
+            "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'>1</span> semaine aux States <br> par an (soit " +
+            Math.round(economie) +
+            " €)"
+          );
+        }
       }
     },
     stringEau() {
@@ -49,6 +91,7 @@ export default {
       );
     },
     stringProteine() {
+      if (this.proteine < 0) this.proteine = 0;
       return (
         "<span style='font-weight: 900;font-size: 40px;line-height: 61px;'> " +
         this.proteine +
@@ -106,6 +149,10 @@ h2 {
   color: #ffdd02;
   position: relative;
   top: -25px;
+}
+
+.middle p {
+  font-size: 27px;
 }
 
 @media only screen and (min-width: 731px) {

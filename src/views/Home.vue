@@ -83,14 +83,7 @@ export default {
     };
   },
   updated: function() {
-    if (this.enableScroll) {
-      this.enableScroll = false;
-      window.scrollTo({
-        behavior: "smooth",
-        left: 0,
-        top: document.getElementById("app").scrollHeight - 80
-      });
-    }
+    this.scroll();
   },
   methods: {
     send(e) {
@@ -105,6 +98,7 @@ export default {
       this.dataResult.repasNorme = this.calculeSommeNorme();
       this.dataResult.eauNorme = this.calculeEau("norme");
       this.dataResult.proteineNorme = this.calculeProteine("norme");
+      this.enableScroll = true;
       this.scroll();
     },
     prixJours(somme) {
@@ -183,11 +177,16 @@ export default {
       return proteine;
     },
     scroll() {
-      window.scrollTo({
-        behavior: "smooth",
-        left: 0,
-        top: document.getElementById("app").scrollHeight
-      });
+      if (this.enableScroll) {
+        window.scrollTo({
+          behavior: "smooth",
+          left: 0,
+          top: document.getElementById("app").scrollHeight - 1150
+        });
+      }
+      setTimeout(() => {
+        this.enableScroll = false;
+      }, 1000);
     }
   }
 };
