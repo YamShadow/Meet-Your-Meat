@@ -1,5 +1,5 @@
 <template>
-  <div class="result flex justify-center px-20 py-24" id="result">
+  <div class="result flex justify-center pt-32 pb-12 py-24" id="result">
     <Regime
       title="prix moyen de vos <br> dépenses actuelles"
       :somme="data.repasActuel"
@@ -9,7 +9,7 @@
       orientation="left"
     ></Regime>
     <Regime
-      title="prix moyen selon les <br> recommandations"
+      title="prix moyen selon les <br> recommandations de l'OMS <br> <span class='text-base' >(Seulement deux repas carnés)</span>"
       :somme="data.repasNorme"
       :eau="data.eauNorme"
       :proteine="data.proteineNorme"
@@ -17,7 +17,7 @@
       orientation="middle"
     ></Regime>
     <Regime
-      title="prix moyen de deux <br> repas veggie"
+      title="prix moyen d'une semaine <br> avec deux repas veggie"
       :somme="data.repas2Vege"
       :eau="data.eau2Vege"
       :proteine="data.proteine2Vege"
@@ -125,6 +125,40 @@ i {
   .px-20 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .pt-32 {
+    padding-top: 3rem;
+  }
+
+  .pb-12 {
+    padding-bottom: 3rem;
+  }
+
+  .button {
+    height: 46px;
+    width: 46px;
+  }
+
+  .bot {
+    right: 25px;
+    bottom: 80px;
+  }
+
+  .share {
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .notif {
+    top: -55px;
+    left: -10px;
+  }
+
+  i {
+    font-size: 1.8rem;
+    left: 7px;
+    top: 8px;
   }
 }
 </style>

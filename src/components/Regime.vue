@@ -148,7 +148,7 @@ h2 {
 .middle h1 {
   color: #ffdd02;
   position: relative;
-  top: -25px;
+  top: -50px;
 }
 
 .middle p {
@@ -159,7 +159,7 @@ h2 {
   .middle .info {
     height: 750px;
     position: relative;
-    top: -25px;
+    top: -57px;
     border-top: 10px solid #ffdd02;
     -webkit-box-shadow: 0px 0px 43px -10px rgba(0, 0, 0, 0.74);
     -moz-box-shadow: 0px 0px 43px -10px rgba(0, 0, 0, 0.74);
@@ -180,6 +180,7 @@ h2 {
   .middle {
     top: -740px;
     position: relative;
+    z-index: 0;
   }
 
   .middle h1 {
@@ -210,7 +211,7 @@ h2 {
 
   .left {
     position: relative;
-    top: 740px;
+    top: 784px;
   }
 }
 </style>

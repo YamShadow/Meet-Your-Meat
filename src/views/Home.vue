@@ -181,7 +181,7 @@ export default {
         window.scrollTo({
           behavior: "smooth",
           left: 0,
-          top: document.getElementById("app").scrollHeight - 1150
+          top: document.getElementById("app").scrollHeight - 1120
         });
       }
       setTimeout(() => {
